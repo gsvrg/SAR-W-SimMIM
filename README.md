@@ -1,4 +1,4 @@
-# sar-w-simmim
+# SAR-W-SimMIM
 ALOS2 data pretraining using SimMIM with SAR weighted loss and finetuning for Segmentation with JAXA-LULC labels  
 
 By [Nevrez Imamoglu](https://github.com/nevrez)\*, [Ali Caglayan](https://acaglayan.github.io/)\*, [Toru Kouyama](https://sites.google.com/site/kouyamaterra/home).
