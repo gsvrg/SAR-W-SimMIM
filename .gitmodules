@@ -1,0 +1,3 @@
+[submodule "alos2utils"]
+	path = alos2utils
+	url = https://github.com/gsvrg/alos2utils.git
