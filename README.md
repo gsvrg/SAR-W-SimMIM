@@ -56,7 +56,8 @@ In this study, we extend this concept to a more standard masked auto-encoder var
 
 ## Getting Started
 
-This repository supports both **local GPU environments** and **HPC cluster usage** 
+This repository supports both **local GPU environments** and **HPC cluster usage**.
+
 The pretraining and finetuning codes are both executed on **ABCI 3.0 (AI Bridging Cloud Infrastructure)**.
 
 ---
