@@ -400,6 +400,8 @@ This allows comparison between:
 
 ## Acknowledgements
 
+This work supported by AIST policy-based budget project “R&D on Generative AI Foundation Models for the Physical Domain".The ALOS-2 original data are copy-righted by JAXA and provided under the JAXA-AIST agreement. We used ABCI 3.0 provided by AIST and AIST Solutions with support from “ABCI 3.0 Development Acceleration Use”.
+
 This work builds upon several excellent open-source projects:
 
 - [SimMIM](https://github.com/microsoft/SimMIM): Base framework for masked image modeling.
