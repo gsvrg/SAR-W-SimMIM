@@ -50,7 +50,7 @@ In this study, we extend this concept to a more standard masked auto-encoder var
 
 | name | pre-train epochs | pre-train resolution | fine-tune resolution | mAcc | mIoU |pre-trained encoder weights |pre-trained decoder weights | fine-tuned weights |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Swin-Base | 800 | 256x256 | 256x256 | 0.6073 | 0.4898 | / | / | / |
+| Swin-Base | 800 | 256x256 | 256x256 | 0.6073 | 0.4898 | [SAR-W-SimMIM encoder weights](https://huggingface.co/gsvrg/ALOS-2_FM/resolve/main/model_weights_simmim_pretrain/sar_w_simim_encoder.pth?download=true) | / | [Segmentation weights](https://huggingface.co/gsvrg/ALOS-2_FM/resolve/main/model_weights_finetuning_segmenation/ckpt_epoch_best.pth?download=true) |
 
 
 
