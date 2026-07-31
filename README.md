@@ -398,7 +398,13 @@ This allows comparison between:
 
 ---
 
-## Acknowledgements
+## Acknowledgements 
+
+This work supported by AIST policy-based budget project “R&D on Generative AI Foundation Models for the Physical Domain".The ALOS-2 original data are copy-righted by JAXA and provided under the JAXA-AIST agreement. We used ABCI 3.0 provided by AIST and AIST Solutions with support from “ABCI 3.0 Development Acceleration Use”.
+
+If you use this model and publish any work, presentation, or other thing, please state that source data for the foundation models are ALOS-2 and the ALOS-2 original data are copy-righted by JAXA and provided by JAXA under the JAXA-AIST agreement.
+
+-------------------------------------------------------------
 
 This work builds upon several excellent open-source projects:
 
@@ -407,9 +413,3 @@ This work builds upon several excellent open-source projects:
 - The **UPerNet** segmentation architecture, adapted and inspired by its implementation within SpectralGPT.
 
 We thank the authors for making their work publicly available to the research community.
-
-
-This work supported by AIST policy-based budget project “R&D on Generative AI Foundation Models for the Physical Domain".The ALOS-2 original data are copy-righted by JAXA and provided under the JAXA-AIST agreement. We used ABCI 3.0 provided by AIST and AIST Solutions with support from “ABCI 3.0 Development Acceleration Use”.
-
-If you use this model and publish any work, presentation, or other thing, please state that source data for the foundation models are ALOS-2 and the ALOS-2 original data are copy-righted by JAXA and provided by JAXA under the JAXA-AIST agreement.
-
