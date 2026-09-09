@@ -53,6 +53,18 @@ In this study, we extend this concept to a more standard masked auto-encoder var
 | Swin-Base | 800 | 256x256 | 256x256 | 0.6073 | 0.4898 | [SAR-W-SimMIM encoder weights](https://huggingface.co/gsvrg/ALOS-2_FM/tree/main/model_weights_simmim_pretrain) | / | [Segmentation weights](https://huggingface.co/gsvrg/ALOS-2_FM/tree/main/model_weights_finetuning_segmenation) |
 
 
+### Pretrained Encoder Weights
+
+`sar_w_simim_encoder.pth` contains only the pretrained encoder
+state_dict and is intended for downstream fine-tuning tasks such as
+semantic segmentation, classification, and detection.
+
+The SimMIM decoder, optimizer state, scheduler state, and other
+pretraining metadata are intentionally not distributed.
+
+The current `load_pretrained()` implementation supports both encoder-only
+weights and full SimMIM checkpoints.
+
 
 ## Getting Started
 
