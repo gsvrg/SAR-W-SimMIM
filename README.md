@@ -62,7 +62,7 @@ semantic segmentation, classification, and detection.
 The SimMIM decoder, optimizer state, scheduler state, and other
 pretraining metadata are intentionally not distributed.
 
-The current `load_pretrained()` implementation supports both encoder-only
+The current `load_pretrained()` implementation in `utils.py` supports both encoder-only
 weights and full SimMIM checkpoints.
 
 
