@@ -77,7 +77,7 @@ data/
 ├── 2022_fall_train_no_forest.csv
 ├── 2022_fall_val_no_forest.csv
 └── 2022_fall_test_no_forest.csv
-
+```text
 These CSV files are intentionally not distributed because they contain dataset-specific metadata, including acquisition dates, file locations, and geographic information associated with individual ALOS-2 patches.
 
 Users should generate their own CSV files and place them under the repository's `data/` directory.
@@ -85,11 +85,12 @@ Users should generate their own CSV files and place them under the repository's 
 For pretraining, each row contains metadata describing a single SAR patch.
 
 Example schema:
-
+```text
 | Year | Month | Day | FolderPath | FileName | MinLon | MinLat | MaxLon | MaxLat | Latitude | Longitude | Category |
 |------|--------|-----|------------|----------|---------|---------|---------|---------|----------|-----------|----------|
 | 2022 | 11 | 19 | 2022/11/19 | IMG-HH-ALOS2458503210-221119-UBSR2.1GUD_12032_7680.tif | 136.0570 | 20.4170 | 136.0694 | 20.4285 | 20.4253 | 136.0683 | 10 |
 | 2022 | 10 | 22 | 2022/10/22 | IMG-HH-ALOS2454363210-221022-UBSR2.1GUD_1280_7168.tif | 136.0374 | 20.9027 | 136.0498 | 20.9142 | 20.9102 | 136.0452 | 1 |
+```text
 
 ### Field Descriptions
 
@@ -102,7 +103,7 @@ Example schema:
 
 The current implementation uses the acquisition date and filename information to construct the patch path:
 
-```text
+
 <data_root>/<year>/<month>/<day>/<filename>
 
 The remaining metadata fields are retained for dataset organisation and analysis and geographic indexing purposes.
