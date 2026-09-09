@@ -6,6 +6,19 @@
 # Modified by Zhenda Xie
 # --------------------------------------------------------
 
+# --------------------------------------------------------
+# Modified by Nevrez Imamoglu (AIST) and Ali Caglayan (AIST) on September 2026
+#
+# revisions include:
+# * support for loading encoder-only state_dict exports
+# * backward compatibility with full SimMIM checkpoints
+# * automatic handling of both:
+#     {'model': state_dict, ...}
+#   and
+#     state_dict
+#   checkpoint formats
+# --------------------------------------------------------
+
 import os
 import torch
 import torch.distributed as dist
@@ -93,17 +106,40 @@ def reduce_tensor(tensor):
     rt /= dist.get_world_size()
     return rt
 
-def load_pretrained(config, model, logger): # revised 2025-08-19
+def load_pretrained(config, model, logger): # revised 2026-09-09
     """
-    Load a pretrained SimMIM checkpoint into a model.
+    Load pretrained weights.
+
+    Supports both:
+
+    1. Full SimMIM checkpoints:
+       {'model': state_dict, ...}
+
+    2. Encoder-only releases:
+       state_dict
+
     Automatically handles:
-      - Encoder wrapped inside a segmentation model (keys start with 'encoder.')
-      - Standalone encoder (keys match directly)
-      - SWIN/VIT remapping for positional bias, etc.
+      - Encoder wrapped inside a segmentation model
+      - Standalone encoder
+      - SWIN/VIT-specific key remapping
     """
     logger.info(f">>>>>>>>>> Fine-tuned from {config.PRETRAINED} ..........")
+    # checkpoint = torch.load(config.PRETRAINED, map_location='cpu')
+    # checkpoint_model = checkpoint['model']
     checkpoint = torch.load(config.PRETRAINED, map_location='cpu')
-    checkpoint_model = checkpoint['model']
+
+    # Support both:
+    # 1) Full SimMIM checkpoint:
+    #    {'model': state_dict, 'optimizer': ..., ...}
+    #
+    # 2) Released encoder-only weights:
+    #    OrderedDict(...)
+    if isinstance(checkpoint, dict) and 'model' in checkpoint:
+        checkpoint_model = checkpoint['model']
+        logger.info("Detected full checkpoint format.")
+    else:
+        checkpoint_model = checkpoint
+        logger.info("Detected encoder-only checkpoint format.")
 
     model_keys = list(model.state_dict().keys())
     
