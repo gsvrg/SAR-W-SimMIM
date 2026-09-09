@@ -287,7 +287,7 @@ qsub qsub_finetune.sh
 #PBS -q rt_HF
 #PBS -l select=1
 #PBS -l walltime=72:00:00
-#PBS -P Group/Account ID for using ABCI points
+#PBS -P GroupID (specify the ABCI group to which your ABCI account belongs for using ABCI points)
 #PBS -j oe
 #PBS -o simmim_pretrain__swin_base__img256_window8__800ep.log
 
@@ -325,7 +325,7 @@ conda deactivate
 #PBS -q rt_HF
 #PBS -l select=1
 #PBS -l walltime=48:00:00
-#PBS -P Group/Account ID for using ABCI points
+#PBS -P GroupID (specify the ABCI group to which your ABCI account belongs for using ABCI points)
 #PBS -j oe
 #PBS -o simmim_finetune__swin_base__img256_window8__800ep.log
 
