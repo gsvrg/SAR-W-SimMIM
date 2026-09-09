@@ -1,5 +1,5 @@
 # SAR-W-SimMIM
-ALOS2 data pretraining using SimMIM with SAR weighted loss and finetuning for Segmentation with JAXA-LULC labels  
+[ALOS-2](https://www.eorc.jaxa.jp/ALOS-2/en/about/palsar2.htm) data pretraining using SimMIM with SAR weighted loss and finetuning for Segmentation with [JAXA LULC](https://www.eorc.jaxa.jp/ALOS/en/dataset/lulc_e.htm#download) labels  
 
 By [Nevrez Imamoglu](https://github.com/nevrez)\*, [Ali Caglayan](https://acaglayan.github.io/)\*, [Toru Kouyama](https://sites.google.com/site/kouyamaterra/home).
 
@@ -12,8 +12,8 @@ This repository provides the official implementation of **SAR Weighted SimMIM (S
 
 
 The repository includes both:
-- Self-supervised **pretraining on ALOS-2 SAR data**
-- Downstream **segmentation fine-tuning using JAXA-LULC**
+- Self-supervised **pretraining on [ALOS-2](https://www.eorc.jaxa.jp/ALOS-2/en/about/palsar2.htm) SAR data**
+- Downstream **segmentation fine-tuning using [JAXA LULC](https://www.eorc.jaxa.jp/ALOS/en/dataset/lulc_e.htm#download)**
 
 > *Nevrez Imamoglu and Ali Caglayan has contributed to this work (both research and repository) equally as co-first authors.
 ---
