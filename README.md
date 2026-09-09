@@ -103,7 +103,6 @@ Example schema:
 
 The current implementation uses the acquisition date and filename information to construct the patch path:
 
-
 <data_root>/<year>/<month>/<day>/<filename>
 
 The remaining metadata fields are retained for dataset organisation and analysis and geographic indexing purposes.
