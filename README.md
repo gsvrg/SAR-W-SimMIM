@@ -78,7 +78,7 @@ The pretraining and finetuning codes are both executed on **ABCI 3.0 (AI Bridgin
 
 Ensure your system has:
 
-- Python ≥ 3.9
+- Python ≥ 3.9 (tested with Python 3.9.23 version on ABCI 3.0 server)
 - CUDA (12.x recommended)
 - cuDNN and NCCL
 
