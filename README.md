@@ -261,7 +261,7 @@ No separate evaluation step is required.
 ---
 
 
-## Running on HPC (qsub) 
+## Running on HPC server - `ABCI 3.0 (AI Bridging Cloud Infrastructure)` using `qsub`
 
 The provided job scripts are configured for execution on **ABCI 3.0 (AI Bridging Cloud Infrastructure)** with qsub. 
 The major options of the qsub command are available in [ABCI 3.0 online Guide for job execution](https://docs.abci.ai/v3/en/job-execution/).
