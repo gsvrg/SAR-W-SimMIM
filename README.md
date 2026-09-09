@@ -68,24 +68,19 @@ weights and full SimMIM checkpoints.
 
 ## Dataset Split Files
 
-The original SAR-W-SimMIM experiments used CSV files containing sample
-references for pretraining and downstream tasks.
+The original SAR-W-SimMIM experiments used dataset split files located
+under the repository's `data/` directory:
 
-These CSV files are intentionally not distributed because they contain
-dataset-specific metadata, including acquisition dates, file locations,
-and geographic information associated with individual ALOS-2 patches.
-
-Users should generate their own CSV files and place them under the
-repository's `data/` directory.
-
-Example:
-
+```text
 data/
-├── pretrain_train.csv
-├── pretrain_val.csv
-├── segmentation_train.csv
-├── segmentation_val.csv
-└── segmentation_test.csv
+├── 2022_fall_pretraining_no_forest.csv
+├── 2022_fall_train_no_forest.csv
+├── 2022_fall_val_no_forest.csv
+└── 2022_fall_test_no_forest.csv
+
+These CSV files are intentionally not distributed because they contain dataset-specific metadata, including acquisition dates, file locations, and geographic information associated with individual ALOS-2 patches.
+
+Users should generate their own CSV files and place them under the repository's `data/` directory.
 
 For pretraining, each row contains metadata describing a single SAR patch.
 
@@ -96,12 +91,21 @@ Example schema:
 | 2022 | 11 | 19 | 2022/11/19 | IMG-HH-ALOS2458503210-221119-UBSR2.1GUD_12032_7680.tif | 136.0570 | 20.4170 | 136.0694 | 20.4285 | 20.4253 | 136.0683 | 10 |
 | 2022 | 10 | 22 | 2022/10/22 | IMG-HH-ALOS2454363210-221022-UBSR2.1GUD_1280_7168.tif | 136.0374 | 20.9027 | 136.0498 | 20.9142 | 20.9102 | 136.0452 | 1 |
 
-The current implementation uses the acquisition date and filename
-information to construct the patch path:
+### Field Descriptions
 
+- **Year, Month, Day**: Acquisition date of the ALOS-2 scene.
+- **FolderPath**: Relative folder location of the SAR patch.
+- **FileName**: Patch filename.
+- **MinLon, MinLat, MaxLon, MaxLat**: Geographic bounding box coordinates of the patch.
+- **Latitude, Longitude**: coordinates of the sampled patch location.
+- **Category**: Land-cover category label of the sampled patch location.
+
+The current implementation uses the acquisition date and filename information to construct the patch path:
+
+```text
 <data_root>/<year>/<month>/<day>/<filename>
 
-The remaining metadata fields are retained for dataset organisation and analysis purposes.
+The remaining metadata fields are retained for dataset organisation and analysis and geographic indexing purposes.
 
 The original split files are not included because they contain dataset-specific indexing information and geographic metadata for the ALOS-2 archive used in our experiments.
 
